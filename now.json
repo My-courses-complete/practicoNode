@@ -1,0 +1,34 @@
+{
+    "version": 2,
+    "env": {
+        "MYSQL_HOST": "sql10.freemysqlhosting.net",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "sql10358272",
+        "MYSQL_PASS": "iXKHcZqyUE",
+        "MYSQL_DB": "sql10358272"
+    },
+    "builds": [
+        {
+            "src": "API/index.js",
+            "use": "@now/node"
+        },
+        {
+            "src": "post/index.js",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/API/auth(.*)",
+            "dest": "/API/index.js"
+        },
+        {
+            "src": "/API/user(.*)",
+            "dest": "/API/index.js"
+        },
+        {
+            "src": "/API/post(.*)",
+            "dest": "/post/index.js"
+        }
+    ]
+}
